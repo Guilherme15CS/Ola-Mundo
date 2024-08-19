@@ -4,3 +4,5 @@
 Repositorio criado durante uma aula do CursoEmVideo
 
 Linha adicionada diretamente do GitHub!
+
+**Aprendendo linguagem** *Markdown*
