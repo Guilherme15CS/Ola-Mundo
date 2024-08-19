@@ -1,9 +1,28 @@
 from math import sqrt
-a = int(input('Digite o a da equação: '))
-b = int(input('Digite o b da equação: '))
-c = int(input('Digite o c da equação: '))
-print(f'{a}x² + {b}x + {c} = 0')
-delta = (b ** 2) - 4 * (a * c)
+verde = '\033[1;32m'
+vermelho = '\033[1;31m'
+fim = '\033[m'
+a = int(input(f'Digite o "A" da equação: (\033[1mSEM O SINAL{fim}) '))
+b = int(input(f'Digite o "B" da equação: (\033[1mSEM O SINAL{fim}) '))
+c = int(input(f'Digite o "C" da equação: (\033[1mSEM O SINAL{fim}) '))
+print(f'''Qual dessas maneiras a equação se dá: 
+      [1] {a}x² {verde}+{fim} {b}x {verde}+{fim} {c} = 0
+      [2] {a}x² {verde}+{fim} {b}x {vermelho}-{fim} {c} = 0
+      [3] {a}x² {vermelho}-{fim} {b}x {vermelho}-{fim} {c} = 0
+      [4] {a}x² {vermelho}-{fim} {b}x {verde}+{fim} {c} = 0''')
+opc = int(input('Qual forma deseja utilizar: '))
+if opc == 1:
+       print(f'{a}x² + {b}x + {c} = 0')
+       delta = (+b ** 2) - 4 * (a * +c)
+elif opc == 2:
+       print(f'{a}x² + {b}x - {c} = 0')
+       delta = (b ** 2) - 4 * (a * -c)
+elif opc == 3:
+        print(f'{a}x² - {b}x - {c} = 0')
+        delta = (-b ** 2) - 4 * (a * -c)
+elif opc == 4:
+        print(f'{a}x² - {b}x - {c} = 0')
+        delta = (-b ** 2) - 4 * (a * +c)
 print(f'Delta vale {delta}')
 if delta < 0:
     print('Não existe raiz real para essa equação')
