@@ -6,10 +6,14 @@ a = int(input(f'Digite o "A" da equação: (\033[1mSEM O SINAL{fim}) '))
 b = int(input(f'Digite o "B" da equação: (\033[1mSEM O SINAL{fim}) '))
 c = int(input(f'Digite o "C" da equação: (\033[1mSEM O SINAL{fim}) '))
 print(f'''Qual dessas maneiras a equação se dá: 
-      [1] {a}x² {verde}+{fim} {b}x {verde}+{fim} {c} = 0
-      [2] {a}x² {verde}+{fim} {b}x {vermelho}-{fim} {c} = 0
-      [3] {a}x² {vermelho}-{fim} {b}x {vermelho}-{fim} {c} = 0
-      [4] {a}x² {vermelho}-{fim} {b}x {verde}+{fim} {c} = 0''')
+      [1] {verde}+{fim}{a}x² {verde}+{fim} {b}x {verde}+{fim} {c} = 0
+      [2] {verde}+{fim}{a}x² {verde}+{fim} {b}x {vermelho}-{fim} {c} = 0
+      [3] {verde}+{fim}{a}x² {vermelho}-{fim} {b}x {vermelho}-{fim} {c} = 0
+      [4] {verde}+{fim}{a}x² {vermelho}-{fim} {b}x {verde}+{fim} {c} = 0
+      [5] {vermelho}-{fim}{a}x² {verde}+{fim} {b}x {verde}+{fim} {c} = 0 
+      [6] {vermelho}-{fim}{a}x² {verde}+{fim} {b}x {vermelho}-{fim} {c} = 0
+      [7] {vermelho}-{fim}{a}x² {vermelho}-{fim} {b}x {vermelho}-{fim} {c} = 0
+      [8] {vermelho}-{fim}{a}x² {vermelho}-{fim} {b}x {verde}+{fim} {c} = 0''')
 opc = int(input('Qual forma deseja utilizar: '))
 if opc == 1:
        print(f'{a}x² + {b}x + {c} = 0')
@@ -23,6 +27,18 @@ elif opc == 3:
 elif opc == 4:
         print(f'{a}x² - {b}x - {c} = 0')
         delta = (-b ** 2) - 4 * (a * +c)
+elif opc == 5:
+        print(f'-{a}x² + {b}x + {c} = 0')
+        delta = (+b ** 2) - 4 * (-a * +c)
+elif opc == 6:
+       print(f'{a}x² + {b}x - {c} = 0')
+       delta = (b ** 2) - 4 * (-a * -c)
+elif opc == 7:
+        print(f'{a}x² - {b}x - {c} = 0')
+        delta = (-b ** 2) - 4 * (-a * -c)
+elif opc == 8:
+        print(f'{a}x² - {b}x - {c} = 0')
+        delta = (-b ** 2) - 4 * (-a * +c)        
 print(f'Delta vale {delta}')
 if delta < 0:
     print('Não existe raiz real para essa equação')
